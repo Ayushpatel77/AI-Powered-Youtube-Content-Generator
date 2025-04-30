@@ -1,0 +1,6 @@
+streamlit
+openai
+transformers
+torch
+soundfile
+parler-tts @ git+https://github.com/huggingface/parler-tts
