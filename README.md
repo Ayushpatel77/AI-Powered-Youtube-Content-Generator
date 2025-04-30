@@ -44,3 +44,5 @@ Project Structure:
 Notes:
 - This project runs entirely on CPU - no GPU required.
 - Ideal for automation channels, reels/shorts, or educational content creators.
+
+
