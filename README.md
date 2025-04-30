@@ -43,7 +43,7 @@ Project Structure:
 
 📸 Screenshots
 🖥️ 1. Streamlit App UI
-![Streamlit UI](screenshots/streamlit_ui.png)
+![Streamlit UI](screenshots/Screenshot 2025-04-30 210711.png)
 
 Notes:
 - This project runs entirely on CPU - no GPU required.
