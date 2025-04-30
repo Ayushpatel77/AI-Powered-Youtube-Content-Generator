@@ -41,6 +41,10 @@ Project Structure:
 - output.wav - Generated voice (runtime)
 - README.md - Project documentation
 
+📸 Screenshots
+🖥️ 1. Streamlit App UI
+![Streamlit UI](screenshots/streamlit_ui.png)
+
 Notes:
 - This project runs entirely on CPU - no GPU required.
 - Ideal for automation channels, reels/shorts, or educational content creators.
