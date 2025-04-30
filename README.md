@@ -20,6 +20,27 @@ Features:
 
   How to Set Up and Run:
 1. Clone the repository:
- git clone https://github.com/<>/ai-youtube-generator.git
+ git clone https://github.com/<Ayushpatel77>/ai-youtube-generator.git
  cd ai-youtube-generator
 2. Create and activate a virtual environment: 
+  python -m venv venv
+ venv\Scripts\activate # For Windows
+3. Install the dependencies:
+ pip install -r requirements.txt
+4. Add your OpenRouter API key in script.py:
+ openai.api_key = "your_openrouter_api_key"
+5. Run the app:
+ streamlit run app.py
+
+Project Structure:
+- app.py - Streamlit app
+- script.py - Script generation logic
+- text_to_speech.py - Parler-TTS voice generation
+- requirements.txt - Required packages
+- script.txt - Generated script (runtime)
+- output.wav - Generated voice (runtime)
+- README.md - Project documentation
+
+Notes:
+- This project runs entirely on CPU - no GPU required.
+- Ideal for automation channels, reels/shorts, or educational content creators.
