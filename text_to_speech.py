@@ -1,32 +1,35 @@
-import sys
-import torch
-from transformers import AutoProcessor
-from parler_tts import ParlerTTSForConditionalGeneration
-import soundfile as sf
+# text_to_speech.py
 
-def synthesize_from_text(script: str, style_input: str = "Default") -> str:
-    # Define style prompts
-    style_prompts = {
-        "Serious":   "Speak in a serious and authoritative tone. ",
-        "Friendly":  "Speak in a casual and friendly tone. ",
-        "Aggressive":"Speak in an aggressive and commanding voice. ",
-        "Announcer": "Speak like a professional announcer. ",
-        "Default":   ""
+import requests
+import json
+
+API_KEY = "YOUR API KEY"#ENTER YOUR ELVENLABS API KEY
+VOICE_ID = "EXAVITQu4vr4xnSDxMaL"
+
+def generate_tts(text: str) -> str:
+    # Your text-to-speech code here
+    url = f"https://api.elevenlabs.io/v1/text-to-speech/{VOICE_ID}"
+
+    headers = {
+        "xi-api-key": API_KEY,
+        "Content-Type": "application/json"
     }
-    prompt = style_prompts.get(style_input, "") + script
 
-    # Load model & processor (cache these globally in real use)
-    processor = AutoProcessor.from_pretrained("parler-tts/parler-tts-mini-v1")
-    model     = ParlerTTSForConditionalGeneration.from_pretrained("parler-tts/parler-tts-mini-v1").to("cpu")
+    payload = {
+        "text": text,
+        "model_id": "eleven_turbo_v2",
+        "voice_settings": {
+            "stability": 0.7,
+            "similarity_boost": 0.75
+        }
+    }
 
-    # Tokenize & generate
-    inputs = processor(text=prompt, return_tensors="pt")
-    with torch.no_grad():
-        output = model.generate(**inputs)
+    response = requests.post(url, headers=headers, data=json.dumps(payload))
 
-    # Save audio
-    audio_arr = output.cpu().squeeze().numpy()
-    output_path = "output.wav"
-    sf.write(output_path, audio_arr, samplerate=model.config.sampling_rate)
-    return output_path
-
+    if response.status_code == 200:
+        audio_path = "output.wav"
+        with open(audio_path, "wb") as f:
+            f.write(response.content)
+        return audio_path
+    else:
+        raise Exception(f"Error {response.status_code}: {response.text}")
