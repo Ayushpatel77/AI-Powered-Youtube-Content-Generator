@@ -21,19 +21,19 @@ Features:
 
   How to Set Up and Run:
 1. Clone the repository:
-   git clone https://github.com/<Ayushpatel77>/ai-youtube-generator.git
-   cd ai-youtube-generator
+  git clone https://github.com/<Ayushpatel77>/ai-youtube-generator.git
+  cd ai-youtube-generator
 2. Create and activate a virtual environment: 
-   python -m venv venv
-   venv\Scripts\activate # For Windows
+ python -m venv venv
+ venv\Scripts\activate # For Windows
 3. Install the dependencies:
-   pip install -r requirements.txt
+  pip install -r requirements.txt
 4. Add your OpenRouter API key in script.py:
-   openai.api_key = "your_openrouter_api_key"
+  openai.api_key = "your_openrouter_api_key"
 5. Add your ElevenLabs API key is text_to_speech.py:
-   elevenlabs_api_key = "your_elevenlabs_api_key"
+  elevenlabs_api_key = "your_elevenlabs_api_key"
 6. Run the app:
-   streamlit run app.py
+  streamlit run app.py
 
 Project Structure:
 - app.py - Streamlit app
