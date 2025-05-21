@@ -3,7 +3,7 @@
 import requests
 import json
 
-API_KEY = "YOUR API KEY"#ENTER YOUR ELVENLABS API KEY
+API_KEY = "YOUR API KEY"#ENTER YOUR ELEVENLABS API KEY
 VOICE_ID = "EXAVITQu4vr4xnSDxMaL"
 
 def generate_tts(text: str) -> str:
