@@ -19,40 +19,34 @@ Features:
 - Python - backend logic and orchestration
 - Torch + Transformers - for model inference
 
-  Getting Started
-1. Clone the repository
-bashgit clone https://github.com/<your-username>/ai-youtube-generator.git
-cd ai-youtube-generator
-2. Create and activate a virtual environment
-bashpython -m venv venv
+  How to Set Up and Run:
+1. Clone the repository:
+  git clone https://github.com/<Ayushpatel77>/ai-youtube-generator.git
+  cd ai-youtube-generator
+2. Create and activate a virtual environment: 
+ python -m venv venv
+ venv\Scripts\activate # For Windows
+3. Install the dependencies:
+  pip install -r requirements.txt
+4. Add your OpenRouter API key in script.py:
+  openai.api_key = "your_openrouter_api_key"
+5. Add your ElevenLabs API key is text_to_speech.py:
+  elevenlabs_api_key = "your_elevenlabs_api_key"
+6. Run the app:
+  streamlit run app.py
 
-# Windows
-venv\Scripts\activate
-# macOS / Linux
-source venv/bin/activate
-3. Install dependencies
-bashpip install -r requirements.txt
-4. Configure your API keys
-In script.py:
-pythonopenai.api_key = "your_openrouter_api_key"
-In text_to_speech.py:
-pythonelevenlabs_api_key = "your_elevenlabs_api_key"
-5. Run the app
-bashstreamlit run app.py
+Project Structure:
+- app.py - Streamlit app
+- script.py - Script generation logic
+- text_to_speech.py - Voiceover generation using ElevenLabs API
+- requirements.txt - Required packages
+- script.txt - Generated script (runtime)
+- output.wav - Generated voice (runtime)
+- README.md - Project documentation
 
-📁 Project Structure
-ai-youtube-generator/
-├── app.py               # Streamlit application entry point
-├── script.py            # Script generation logic (OpenRouter / LLaMA)
-├── text_to_speech.py    # Voiceover generation (ElevenLabs API)
-├── requirements.txt     # Python dependencies
-├── script.txt           # Generated script output (runtime)
-├── output.wav           # Generated audio output (runtime)
-├── screenshots/         # UI screenshots
-└── README.md            # Project documentation
-
-📸 Screenshot
-Show Image
+📸 Screenshots
+🖥️ 1. Streamlit App UI
+![Streamlit UI](screenshots/Screenshot 2025-04-30 210711.png)
 
 Notes:
 - This project runs entirely on CPU - no GPU required.
