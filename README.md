@@ -1,125 +1,61 @@
+# AI-Powered-Youtube-Content-Generator
 
-AI-Powered YouTube Content Generator
+This project allows users to automatically generate YouTube video scripts and voiceovers based on
+any topic they provide.
+It leverages state-of-the-art language models (LLaMA 3.1 via OpenRouter) for script generation and
+for script generation and ElevenLabs API for text-to-speech synthesis.
 
-Script generation + voiceovers, fully automated
 
-🐍 Python ⚡ Streamlit 🧠 LLaMA 3.1 🎙️ ElevenLabs
+Features:
+- Generate engaging YouTube video scripts with one click
+- Convert scripts into realistic voiceovers using ElevenLabs
+- Convert scripts into realistic voiceovers
+- Clean and interactive UI using Streamlit
 
-Features
+ Technologies Used:
+- Streamlit - UI for input, output, and audio playback
+- OpenRouter (LLaMA 3.1 8B Instruct) - for AI-generated scripts
+- ElevenLabs API – For high-quality text-to-speech voice generation
+- Python - backend logic and orchestration
+- Torch + Transformers - for model inference
 
-✍️
-
-One-click scripts
-
-Generate engaging video scripts from any topic instantly.
-
-🔊
-
-Realistic voiceovers
-
-Convert scripts to high-quality audio via ElevenLabs.
-
-🖥️
-
-Interactive UI
-
-Clean Streamlit interface with inline audio playback.
-
-Technologies
-
-Streamlit
-
-UI, input & audio playback
-
-OpenRouter (LLaMA 3.1)
-
-AI script generation
-
-ElevenLabs API
-
-Text-to-speech synthesis
-
-Python + Transformers
-
-Backend & model inference
-
-Setup
-
-1
-
-Clone the repository
-
-git clone https://github.com/<username>/ai-youtube-generator.git
+  Getting Started
+1. Clone the repository
+bashgit clone https://github.com/<your-username>/ai-youtube-generator.git
 cd ai-youtube-generator
+2. Create and activate a virtual environment
+bashpython -m venv venv
 
-2
+# Windows
+venv\Scripts\activate
+# macOS / Linux
+source venv/bin/activate
+3. Install dependencies
+bashpip install -r requirements.txt
+4. Configure your API keys
+In script.py:
+pythonopenai.api_key = "your_openrouter_api_key"
+In text_to_speech.py:
+pythonelevenlabs_api_key = "your_elevenlabs_api_key"
+5. Run the app
+bashstreamlit run app.py
 
-Create & activate a virtual environment
+📁 Project Structure
+ai-youtube-generator/
+├── app.py               # Streamlit application entry point
+├── script.py            # Script generation logic (OpenRouter / LLaMA)
+├── text_to_speech.py    # Voiceover generation (ElevenLabs API)
+├── requirements.txt     # Python dependencies
+├── script.txt           # Generated script output (runtime)
+├── output.wav           # Generated audio output (runtime)
+├── screenshots/         # UI screenshots
+└── README.md            # Project documentation
 
-python -m venv venv
-venv\\Scripts\\activate   # Windows
-source venv/bin/activate  # macOS/Linux
+📸 Screenshot
+Show Image
 
-3
+Notes:
+- This project runs entirely on CPU - no GPU required.
+- Ideal for automation channels, reels/shorts, or educational content creators.
 
-Install dependencies
 
-pip install -r requirements.txt
-
-4
-
-Add your API keys
-
-\# script.py
-openai.api\_key = "your\_openrouter\_api\_key"
-
-# text\_to\_speech.py
-elevenlabs\_api\_key = "your\_elevenlabs\_api\_key"
-
-5
-
-Run the app
-
-streamlit run app.py
-
-Project Structure
-
-📄
-
-app.py
-
-Streamlit app entry point
-
-🧠
-
-script.py
-
-Script generation logic
-
-🎙️
-
-text\_to\_speech.py
-
-ElevenLabs voiceover generation
-
-📦
-
-requirements.txt
-
-Python dependencies
-
-📝
-
-script.txt
-
-Generated script (runtime)
-
-🔉
-
-output.wav
-
-Generated audio (runtime)
-
-ℹ️
-
-Runs entirely on **CPU** — no GPU required. Ideal for automation channels, Reels/Shorts, and educational content creators.
